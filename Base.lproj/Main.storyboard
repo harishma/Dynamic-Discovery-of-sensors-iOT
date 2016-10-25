@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="snn-uU-FwM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="oUy-zr-Ojr">
+            <objects>
+                <navigationController id="snn-uU-FwM" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PTd-y9-XOB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lui-Ed-7VN" kind="relationship" relationship="rootViewController" id="Rw1-Gn-Jpt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GYr-XQ-RBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="109" y="-184"/>
+        </scene>
+        <!--Detection View Controller-->
+        <scene sceneID="gbY-YU-uTt">
+            <objects>
+                <viewController id="lui-Ed-7VN" customClass="PSDetectionViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q61-pt-REi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zbk-sY-unG">
+                                <rect key="frame" x="20" y="367" width="128" height="194.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="beacons.png"/>
+                                <connections>
+                                    <action selector="beaconSelected:" destination="lui-Ed-7VN" eventType="touchUpInside" id="gAJ-rK-yLf"/>
+                                    <segue destination="F4a-pL-Aam" kind="push" id="8pu-m8-6XN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pgU-dQ-6uN">
+                                <rect key="frame" x="20" y="123" width="280" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Audio.jpg"/>
+                                <connections>
+                                    <action selector="audioSurveillanceSelected:" destination="lui-Ed-7VN" eventType="touchUpInside" id="TxG-DW-b2s"/>
+                                    <segue destination="F4a-pL-Aam" kind="push" id="sbj-92-xO5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fPJ-nV-jPR">
+                                <rect key="frame" x="20" y="82" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hEa-QC-h1C">
+                                <rect key="frame" x="156" y="367" width="149" height="194.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="video.jpg"/>
+                                <connections>
+                                    <action selector="videoSurveillanceSelected:" destination="lui-Ed-7VN" eventType="touchUpInside" id="pr2-Ya-Y0n"/>
+                                    <segue destination="F4a-pL-Aam" kind="push" id="CkN-Qi-9Vv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JIm-ea-jqv"/>
+                    <connections>
+                        <outlet property="audioSurveillanceButton" destination="pgU-dQ-6uN" id="Gzh-gR-Bsc"/>
+                        <outlet property="beaconsButton" destination="Zbk-sY-unG" id="F9P-8C-81p"/>
+                        <outlet property="notificationLabel" destination="fPJ-nV-jPR" id="jqn-WP-yyW"/>
+                        <outlet property="videoSurveillanceButton" destination="hEa-QC-h1C" id="KnB-RL-mUT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F1F-wP-4dv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="550" y="-184"/>
+        </scene>
+        <!--Policy Display View Controller-->
+        <scene sceneID="u2a-wY-GGz">
+            <objects>
+                <viewController id="F4a-pL-Aam" customClass="PSPolicyDisplayViewController" sceneMemberID="viewController">
+                    <webView key="view" contentMode="scaleToFill" id="VN6-bx-Dle">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </webView>
+                    <navigationItem key="navigationItem" id="AOJ-lU-hnm"/>
+                    <connections>
+                        <outlet property="pdwebView" destination="VN6-bx-Dle" id="b3L-7c-mIu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VQH-Ab-hT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="976" y="-184"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Audio.jpg" width="466" height="459"/>
+        <image name="beacons.png" width="400" height="256"/>
+        <image name="video.jpg" width="137" height="137"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="sbj-92-xO5"/>
+    </inferredMetricsTieBreakers>
+</document>
