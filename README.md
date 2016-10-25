@@ -1,0 +1,2 @@
+# Dynamic-Discovery-of-sensors-iOT
+With the advent of Internet of Things, it is not an overstatement to say every device can potentially collect user data which might not always to desirable. To address this issue we built a mobile app that dynamically notifies the users of any kind of data collection around them, followed by a short summary of the data being actually collected.The app is currently supported on iOS platform.
